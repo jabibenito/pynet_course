@@ -11,7 +11,7 @@ cisco_cfg = CiscoConfParse("cisco_ipsec.txt")
 crypto_map = cisco_cfg.find_objects(r"^crypto map CRYPTO")
 
 print "--------------------------------------------------------------"
-print "Printing cryptos thay start with crypto map CRYPTO"
+print "Printing crypto maps that start with crypto map CRYPTO"
 print "--------------------------------------------------------------"
 
 

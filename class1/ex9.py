@@ -17,5 +17,5 @@ pfs_group = cisco_cfg.find_objects_w_child(parentspec=r"^crypto map CRYPTO", chi
 for pfs in pfs_group:
    print pfs.text
 #   for child in pfs.children:
-#        print child.text
+#       print child.text
 
