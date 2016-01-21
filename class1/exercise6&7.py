@@ -12,7 +12,7 @@ while True:
 my_list.append({})
 
 while True:
-    y = raw_input("Enter the name of the key in the dictionary or press enter to finish: ")
+    y = raw_input("Enter the name of the key in the list or press enter to finish: ")
     z = raw_input("Enter the value of the key or press enter to finish: ")
     if not y: break
     if not z: break
