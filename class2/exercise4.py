@@ -17,7 +17,6 @@
 # c. Create a script that connects to both routers (pynet-rtr1 and pynet-rtr2) and prints out both the MIB2 sysName and sysDescr.
 
 import snmp_helper
-import pprint
 
 COMMUNITY_STRING = "galileo"
 RTR1_SNMP_PORT = 7961
@@ -47,11 +46,6 @@ snmp_RTR1_output_SysDescr = snmp_helper.snmp_extract(snmp_SysDescr_rtr1)
 snmp_RTR2_output_SysName = snmp_helper.snmp_extract(snmp_SysName_rtr2)
 snmp_RTR2_output_SysDescr = snmp_helper.snmp_extract(snmp_SysDescr_rtr2)
 
-
-#pprint.pprint(snmp_RTR1_output_SysName)
-#pprint.pprint(snmp_RTR1_output_SysDescr)
-#pprint.pprint(snmp_RTR2_output_SysName)
-#pprint.pprint(snmp_RTR2_output_SysDescr)
 
 print "*******************  " + snmp_RTR1_output_SysName + "  *********************"
 print snmp_RTR1_output_SysDescr
