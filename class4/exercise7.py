@@ -1,3 +1,5 @@
+# Use Netmiko to change the logging buffer size (logging buffered <size>) on pynet-rtr2.
+
 from getpass import getpass
 from netmiko import ConnectHandler
 
