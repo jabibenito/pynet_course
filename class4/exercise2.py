@@ -1,6 +1,7 @@
-import paramiko
+#!/usr/bin/python
 from getpass import getpass
 import time
+import paramiko
 
 def main():
     ip_addr = '50.76.53.27'

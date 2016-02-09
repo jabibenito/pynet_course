@@ -1,5 +1,6 @@
-from netmiko import ConnectHandler
 from getpass import getpass
+from netmiko import ConnectHandler
+
 
 def main():
 

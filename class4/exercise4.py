@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-import pexpect
 import sys
 from getpass import getpass
 import time
+import pexpect
 
 def main():
     ip_addr = '50.76.53.27'

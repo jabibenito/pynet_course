@@ -1,5 +1,6 @@
-from netmiko import ConnectHandler
 from getpass import getpass
+from netmiko import ConnectHandler
+
 
 def main():
 
@@ -8,7 +9,7 @@ def main():
     pynet_rtr1 = {'device_type': 'cisco_ios', 'ip': '50.76.53.27', 'username': 'pyclass', 'password': password, 'port': 22}
     pynet_rtr2 = {'device_type': 'cisco_ios', 'ip': '50.76.53.27', 'username': 'pyclass', 'password': password, 'port': 8022}
 
-    for ssh in pynet_rtr1,pynet_rtr2,:
+    for ssh in pynet_rtr1, pynet_rtr2:
         ssh_connection = ConnectHandler(**ssh)
         ssh_connection.config_mode()
         ssh_connection.send_config_from_file(config_file='commands_file.txt')

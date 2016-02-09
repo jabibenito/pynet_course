@@ -1,6 +1,6 @@
-from netmiko import ConnectHandler
 from getpass import getpass
 import time
+from netmiko import ConnectHandler
 
 password = getpass()
 
