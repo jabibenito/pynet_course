@@ -1,3 +1,4 @@
+# Use Pexpect to retrieve the output of 'show ip int brief' from pynet-rtr2.
 #!/usr/bin/env python
 import sys
 from getpass import getpass
