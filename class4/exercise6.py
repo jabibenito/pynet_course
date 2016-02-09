@@ -1,3 +1,4 @@
+# Use Netmiko to execute 'show arp' on pynet-rtr1, pynet-rtr2, and juniper-srx.
 from getpass import getpass
 from netmiko import ConnectHandler
 
