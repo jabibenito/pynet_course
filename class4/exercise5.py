@@ -1,3 +1,4 @@
+# Use Netmiko to enter into configuration mode on pynet-rtr2. Also use Netmiko to verify your state (i.e. that you are currently in configuration mode).
 from getpass import getpass
 import time
 from netmiko import ConnectHandler
