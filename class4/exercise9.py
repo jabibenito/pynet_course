@@ -34,7 +34,7 @@ def main():
         t.start()
         threads.append(t)
     for t in threads:
-        t.join
+        t.join()
 
 if __name__ == "__main__":
     main()

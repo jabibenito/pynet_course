@@ -1,6 +1,6 @@
+#!/usr/bin/python
 # Use Paramiko to retrieve the entire 'show version' output from pynet-rtr2.
 
-#!/usr/bin/python
 from getpass import getpass
 import time
 import paramiko

@@ -16,7 +16,7 @@ def main():
     ssh_connection.send_config_set(logging_command)
 
     output = ssh_connection.send_command('show run | inc logging buffered')
-    outp = output.split(' ')
+    outp = output.split()
 
     print "The new size of logging buffered is %s" % outp[2]
 
