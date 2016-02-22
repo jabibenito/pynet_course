@@ -1,0 +1,35 @@
+---
+
+- name: Arista Restore Configuration
+  hosts: arista
+
+  tasks:
+    - name: Restore Ethernet3 port to access mode and VLAN1
+      eos_switchport: name=Ethernet3  mode=access access_vlan=1 trunk_allowed_vlans=1-4094 trunk_native_vlan=1
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+     
+    - name: Delete Etheret3 description <none>
+      eos_interface: name=Ethernet3 description=""
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: Delete VLANs
+      eos_vlan: name={{item.name}} vlanid={{item.vlanid}} state=absent
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      
+      with_items:
+        - {name: DATACENTER, vlanid: 100}
+        - {name: VOIP, vlanid: 101}
+        - {name: GUEST, vlanid: 102}

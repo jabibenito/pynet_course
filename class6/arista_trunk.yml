@@ -1,0 +1,13 @@
+---
+
+- name: Arista Trunking
+  hosts: arista
+
+  tasks:
+     - name: Setting Ethernet3 Trunk mode 
+       eos_switchport: name=Ethernet3 mode=trunk trunk_native_vlan=1 trunk_allowed_vlans=100-102
+             username={{ eapi_username }}
+             password={{ eapi_password }}
+             host={{ eapi_hostname }}
+             port={{ eapi_port }}
+             transport=https
