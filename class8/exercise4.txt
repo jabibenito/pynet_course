@@ -1,0 +1,23 @@
+# Remove the two objects created in the previous exercise from the database.
+
+>>> from net_system.models import NetworkDevice
+>>> net_devices = NetworkDevice.objects.all()
+>>> print net_devices
+[<NetworkDevice: pynet-rtr1>, <NetworkDevice: pynet-rtr2>,
+<NetworkDevice: pynet-sw1>, <NetworkDevice: pynet-sw2>, <NetworkDevice: pynet-sw3>,
+<NetworkDevice: pynet-sw4>, <NetworkDevice: juniper-srx>,
+<NetworkDevice: pynet-rtr3>, <NetworkDevice: pynet-rtr4>]
+
+>>> pynet_rtr3.delete()
+>>> print net_devices
+[<NetworkDevice: pynet-rtr1>, <NetworkDevice: pynet-rtr2>,
+<NetworkDevice: pynet-sw1>, <NetworkDevice: pynet-sw2>, <NetworkDevice: pynet-sw3>,
+<NetworkDevice: pynet-sw4>, <NetworkDevice: juniper-srx>,
+<NetworkDevice: pynet-rtr4>]
+
+>>> a_device = NetworkDevice.objects.get(device_name='pynet-rtr4')
+>>> a_device.delete()
+>>> print net_devices
+[<NetworkDevice: pynet-rtr1>, <NetworkDevice: pynet-rtr2>, <NetworkDevice: pynet-sw1>,
+<NetworkDevice: pynet-sw2>, <NetworkDevice: pynet-sw3>, <NetworkDevice: pynet-sw4>,
+<NetworkDevice: juniper-srx>]

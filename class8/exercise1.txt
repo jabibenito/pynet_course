@@ -1,0 +1,53 @@
+# Initialize your Django database.
+# Add the seven NetworkDevice objects and two Credentials objects into your database.
+# After this initialization, you should be able to do the following (from the ~/DJANGOX/djproject directory):
+
+# Initial DB configuration
+
+python manage.py migrate
+
+# Refreshing DB after changes to models.py (assumes app name = net_system)
+
+python manage.py makemigrations net_system
+
+python manage.py migrate
+
+
+# b. Update the NetworkDevice objects such that each NetworkDevice links to the correct Credentials.
+
+(applied_python)[jbenito@ip-172-30-0-57 djproject]$ python manage.py shell
+Python 2.7.10 (default, Dec  8 2015, 18:25:23)
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from net_system.models import NetworkDevice, Credentials
+>>> net_devices = NetworkDevice.objects.all()
+>>> net_devices
+[<NetworkDevice: pynet-rtr1>, <NetworkDevice: pynet-rtr2>, <NetworkDevice: pynet-sw1>, <NetworkDevice: pynet-sw2>, <NetworkDevice: pynet-sw3>, <NetworkDevice: pynet-sw4>, <NetworkDevice: juniper-srx>]
+>>> creds = Credentials.objects.all()
+>>> creds
+[<Credentials: pyclass>, <Credentials: admin1>]
+>>> std_creds = creds[0]
+>>> std_creds
+<Credentials: pyclass>
+>>> arista_creds = creds[1]
+>>> arista_creds
+<Credentials: admin1>
+>>> for device in net_devices:
+...     if 'pynet-sw' in device.device_name:
+...         device.credentials = arista_creds
+...     else:
+...         device.credentials = std_creds
+...     device.save()
+...
+>>> for device in net_devices:
+...     print device, device.credentials
+...
+pynet-rtr1 pyclass
+pynet-rtr2 pyclass
+pynet-sw1 admin1
+pynet-sw2 admin1
+pynet-sw3 admin1
+pynet-sw4 admin1
+juniper-srx pyclass
+

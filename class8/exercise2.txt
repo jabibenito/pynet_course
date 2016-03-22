@@ -1,0 +1,22 @@
+# Set the vendor field of each NetworkDevice to the appropriate vendor.
+# Save this field to the database.
+
+>>> for device in net_devices:
+...     if 'pynet-rtr' in device.device_name:
+...         device.vendor = 'cisco'
+...     elif 'pynet-sw' in device.device_name:
+...         device.vendor = 'arista'
+...     else:
+...         device.vendor = 'juniper'
+...     device.save()
+...
+>>> for device in net_devices:
+...     print device, device.vendor
+...
+pynet-rtr1 cisco
+pynet-rtr2 cisco
+pynet-sw1 arista
+pynet-sw2 arista
+pynet-sw3 arista
+pynet-sw4 arista
+juniper-srx juniper

@@ -1,0 +1,22 @@
+# Create two new test NetworkDevices in the database.
+# Use both direct object creation and the .get_or_create() method to create the devices.
+
+>>> pynet_rtr3 = NetworkDevice(
+...     device_name = 'pynet-rtr3',
+...     device_type = 'cisco_ios',
+...     ip_address = '192.168.1.1',
+...     port=23,
+... )
+>>> pynet_rtr3.save()
+>>> pynet_rtr4 = NetworkDevice.objects.get_or_create(
+...     device_name= 'pynet-rtr4',
+...     device_type='cisco_ios',
+...     ip_address='192.168.1.2',
+...     port=22,
+... )
+>>> from net_system.models import NetworkDevice
+>>> net_devices = NetworkDevice.objects.all()
+>>> print net_devices
+[<NetworkDevice: pynet-rtr1>, <NetworkDevice: pynet-rtr2>, <NetworkDevice: pynet-sw1>,
+<NetworkDevice: pynet-sw2>, <NetworkDevice: pynet-sw3>, <NetworkDevice: pynet-sw4>,
+<NetworkDevice: juniper-srx>, <NetworkDevice: pynet-rtr3>, <NetworkDevice: pynet-rtr4>]
