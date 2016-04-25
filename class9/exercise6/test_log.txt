@@ -1,0 +1,11 @@
+(applied_python)[jbenito@ip-172-30-0-57 ~]$ python
+Python 2.7.10 (default, Dec  8 2015, 18:25:23)
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mytest import world
+>>> my_obj = world.NewClass('EH', 'Igorre', 'Batz')
+The child class should do something additional in the __init__()
+>>> my_obj.hello()
+Hello new world: EH Igorre Batz
+>>> my_obj.not_hello()
+Bye Bye: EH Igorre Batz

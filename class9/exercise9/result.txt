@@ -1,0 +1,7 @@
+(applied_python)[jbenito@ip-172-30-0-57 ~]$ chmod 755 package_test.py
+(applied_python)[jbenito@ip-172-30-0-57 ~]$ ./package_test.py
+Hello world
+Hello simple
+Hello whatever
+Hello world: Bilbao Igorre Leioa
+Bye Bye: Bilbao Igorre Leioa
