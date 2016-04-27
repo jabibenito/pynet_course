@@ -1,5 +1,5 @@
 <configuration>
         <system>
-            <host-name>batzxml-jnpr-srx1</host-name>
+            <host-name>pynet-jnpr-srx1</host-name>
         </system>
 </configuration>
