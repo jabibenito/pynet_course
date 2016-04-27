@@ -1,0 +1,9 @@
+[local]
+localhost ansible_connection=local
+
+[juniper]
+pynet-sf-srx ansible_ssh_host=50.76.53.27 juniper_user=pyclass juniper_passwd=88newclass
+
+[juniper:vars]
+ansible_connection=local
+ansible_python_interpreter=~/applied_python/bin/python
